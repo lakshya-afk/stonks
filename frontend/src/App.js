@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { 
   Header,
@@ -26,26 +25,32 @@ function App() {
     setShowLoginModal(false);
   };
 
+  const renderCurrentPage = () => {
+    switch(currentPage) {
+      case 'stocks':
+        return <StocksPage />;
+      case 'mutual-funds':
+        return <MutualFundsPage />;
+      case 'portfolio':
+        return <PortfolioPage />;
+      default:
+        return <HomePage />;
+    }
+  };
+
   return (
     <div className="App">
-      <Router>
-        <Header 
-          onNavigation={handleNavigation} 
-          onLoginClick={handleLoginClick}
-          currentPage={currentPage}
-        />
-        
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/stocks" element={<StocksPage />} />
-          <Route path="/mutual-funds" element={<MutualFundsPage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
-        </Routes>
+      <Header 
+        onNavigation={handleNavigation} 
+        onLoginClick={handleLoginClick}
+        currentPage={currentPage}
+      />
+      
+      {renderCurrentPage()}
 
-        {showLoginModal && (
-          <LoginModal onClose={handleCloseModal} />
-        )}
-      </Router>
+      {showLoginModal && (
+        <LoginModal onClose={handleCloseModal} />
+      )}
     </div>
   );
 }
