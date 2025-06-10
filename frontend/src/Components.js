@@ -386,6 +386,70 @@ const MobileAppSection = () => {
   );
 };
 
+// Credit Section
+const CreditSection = () => {
+  return (
+    <section className="py-20 bg-emerald-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1649003515353-c58a239cf662"
+              alt="Credit Score Dashboard"
+              className="w-full h-auto rounded-2xl shadow-xl"
+            />
+          </motion.div>
+
+          {/* Right Side - Content */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Credit, when you need it.
+            </h2>
+            <p className="text-gray-600 mb-8">
+              Apply for a loan, get it within minutes.
+            </p>
+            
+            <div className="space-y-6 mb-8">
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-gray-700">Instant approval process</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-gray-700">Competitive interest rates</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-gray-700">Flexible repayment options</span>
+              </div>
+            </div>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+            >
+              Know more
+            </motion.button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // HomePage Component
 export const HomePage = () => {
   return (
