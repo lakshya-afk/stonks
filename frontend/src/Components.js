@@ -393,6 +393,7 @@ export const HomePage = () => {
       <HeroSection />
       <FeaturesSection />
       <MobileAppSection />
+      <CreditSection />
     </div>
   );
 };
