@@ -59,6 +59,7 @@ export const Header = ({ onNavigation, onLoginClick, currentPage }) => {
     { name: 'Stocks', key: 'stocks' },
     { name: 'FD', key: 'fd' },
     { name: 'Mutual Funds', key: 'mutual-funds' },
+    { name: 'Portfolio', key: 'portfolio' },
     { name: 'More', key: 'more' }
   ];
 
